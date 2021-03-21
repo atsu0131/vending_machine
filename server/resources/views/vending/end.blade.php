@@ -12,10 +12,16 @@
     <p>お金が足りません</p>
   @elseif($flag == 2)
     <p>在庫切れです</p>
+    @elseif($flag == 3)
+    <p>釣り銭切れです</p>
   @else
     <p>購入ありがとうございます</p>
     <p>お釣りは{{$change}}円です</p>
   @endif
+
+  販売機の残金{{$price}}円
 </body>
+<br>
+<a href="/">戻る</a>
 </html>
 

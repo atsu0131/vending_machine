@@ -7,8 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <p>自動販売機です。お金を入れてボタンを押してください。</p>
-
+    <p>自動販売機です。お金を入れて商品を選んでボタンを押してください。</p>
+    @if(count($errors) > 0)
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+    @endif
     <form action="/end" method="post">
         @csrf
         <div>
@@ -17,7 +23,7 @@
         </div>
         <select name="goods">
         @foreach ($goods as $good)
-            <option value={{$good->id}}>{{$good->name}}</option>
+            <option value={{$good->id}}>{{$good->name}} {{$good->price}}円</option>
         @endforeach
         </select>
 

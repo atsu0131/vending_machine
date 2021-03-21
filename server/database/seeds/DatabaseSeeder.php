@@ -29,5 +29,11 @@ class DatabaseSeeder extends Seeder
                 'store' => 20,
             ],
         ]);
+
+        DB::table('money')->insert([
+            [
+              'money' => 10000000,
+            ],
+        ]);
     }
 }
